@@ -101,4 +101,44 @@ npm run dev
   }
 </script>
 
+# Baixar pasta api do curso
 
+entrar na pasta
+npm start
+localhost:3000/v1/fotos
+
+# Como pegar a api e mostrar as fotos
+
+1. Baixar modulo vue-resource
+npm install vue-rosource@1.0.3 --save
+
+2. Declarar no main.js
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
+
+# Criando um alert com componentes
+<template>
+  <div>
+    <h1>{{ Alurapic }}</h1>
+    <ul>
+      <li v-for="foto of fotos">
+        <img :src="foto.url" :alt="foto.titulo" >
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        titulo: 'Alurapic',
+        fotos: []
+      }
+    },
+    
+    created() {
+      alert('Criei componente');
+    }
+  }
+</script>
